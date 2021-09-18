@@ -1,8 +1,10 @@
 extends Node2D
 
-# Credit / Reference Materials
-# Keyboard Buttons: https://docs.godotengine.org/en/stable/classes/class_animatedsprite.html
-# Animated Sprite Tutorial: https://docs.godotengine.org/en/stable/tutorials/2d/2d_sprite_animation.html
+# Keyboard Buttons:
+#   https://docs.godotengine.org/en/stable/classes/class_animatedsprite.html
+
+# Animated Sprite Tutorial:
+#   https://docs.godotengine.org/en/stable/tutorials/2d/2d_sprite_animation.html
 
 onready var _animatedSprite = $AnimatedSprite
 var _facingDirection = ""
