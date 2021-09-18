@@ -4,7 +4,7 @@ extends Node2D
 # Keyboard Buttons: https://docs.godotengine.org/en/stable/classes/class_animatedsprite.html
 # Animated Sprite Tutorial: https://docs.godotengine.org/en/stable/tutorials/2d/2d_sprite_animation.html
 
-onready var _animated_sprite = $AnimatedSprite
+onready var _animatedSprite = $AnimatedSprite
 var _facingDirection = ""
 
 var _listOfEventKeysForUiLeft : Array
@@ -23,15 +23,15 @@ func _process(_delta):
 		StopMovement()
 
 func MoveInDirection(dir):
-	_animated_sprite.play("run")
+	_animatedSprite.play("run")
 	_facingDirection = dir
 	if dir == "Left":
-		_animated_sprite.flip_h = true
+		_animatedSprite.flip_h = true
 	else:
-		_animated_sprite.flip_h = false
+		_animatedSprite.flip_h = false
 
 func StopMovement():
-	_animated_sprite.stop()
+	_animatedSprite.stop()
 	_facingDirection = ""
 
 # Note: These key bindings can normally be done through
