@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://examples/animated-sprite.tscn" type="PackedScene" id=1]
+[ext_resource path="res://examples/animated-sprite-sheet.tscn" type="PackedScene" id=2]
 [ext_resource path="res://support/examples.gd" type="Script" id=3]
+[ext_resource path="res://examples/animation-player.tscn" type="PackedScene" id=4]
 
 [node name="examples" type="HBoxContainer"]
 anchor_right = 1.0
@@ -63,4 +65,10 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="animated-sprite" parent="HSplitContainer/PanelContainer" instance=ExtResource( 1 )]
+visible = false
+
+[node name="animated-sprite-sheet" parent="HSplitContainer/PanelContainer" instance=ExtResource( 2 )]
+visible = false
+
+[node name="animation-player" parent="HSplitContainer/PanelContainer" instance=ExtResource( 4 )]
 visible = false
