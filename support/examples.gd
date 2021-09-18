@@ -19,6 +19,7 @@ func LoadExampleNodes():
 
 func HideAllExamples():
 	for node in _panelContainer.get_children():
+		node.Stop()
 		node.visible = false
 
 func LoadExampleHandler(exampleName):
@@ -26,4 +27,5 @@ func LoadExampleHandler(exampleName):
 	for node in _panelContainer.get_children():
 		if node.name == exampleName:
 			node.visible = true
+			node.Start()
 			break

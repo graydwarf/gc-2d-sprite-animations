@@ -7,6 +7,9 @@ extends Node2D
 onready var _animated_sprite = $AnimatedSprite
 var _facingDirection = ""
 
+var _listOfEventKeysForUiLeft : Array
+var _listOfEventKeysForUiRight : Array
+
 # Note: Input handling is primitive to keep code minimal.
 func _process(_delta):
 	if _facingDirection == "" && Input.is_action_pressed("ui_left"):
@@ -31,12 +34,45 @@ func StopMovement():
 	_animated_sprite.stop()
 	_facingDirection = ""
 
-# gc support functions below here
+# Note: These key bindings can normally be done through
+# Project Settings -> Input Map but we load this project
+# inside Godot Companion where we swap out different key
+# bindings between different examples.
+func AddKeyBindings():
+	var listOfLeftBinds = [KEY_A, KEY_J]
+	var listOfRightBinds = [KEY_D, KEY_L]
+	for key in listOfLeftBinds:
+		var inputEventKey = AddInputEventKey(key, "ui_left")
+		_listOfEventKeysForUiLeft.append(inputEventKey)
+
+	for key in listOfRightBinds:
+		var inputEventKey = AddInputEventKey(key, "ui_right")
+		_listOfEventKeysForUiRight.append(inputEventKey)
+
+func AddInputEventKey(key, uiEventName):
+	var inputEventKey = InputEventKey.new()
+	inputEventKey.scancode = key
+	InputMap.action_add_event(uiEventName, inputEventKey)
+	return inputEventKey
+
+func RemoveKeyBindings():
+	for key in _listOfEventKeysForUiLeft:
+		InputMap.action_erase_event("ui_left", key)
+
+	for key in _listOfEventKeysForUiRight:
+		InputMap.action_erase_event("ui_right", key)
+
+	_listOfEventKeysForUiLeft.clear()
+	_listOfEventKeysForUiRight.clear()
+
+# shared support functions
+# used when running locally
+# used when running within godot-companion
 func Start():
-	pass
+	AddKeyBindings()
 
 func Stop():
-	pass
+	RemoveKeyBindings()
 
 func GetGodotDocUrl():
 	return "tutorials/2d/2d_sprite_animation.html"
