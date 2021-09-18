@@ -8,7 +8,6 @@ extends Node2D
 
 onready var _animatedSprite = $AnimatedSprite
 var _facingDirection = ""
-
 var _listOfEventKeysForUiLeft : Array
 var _listOfEventKeysForUiRight : Array
 
