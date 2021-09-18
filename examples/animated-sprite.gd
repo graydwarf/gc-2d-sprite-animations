@@ -1,7 +1,7 @@
 extends Node2D
 
 # Keyboard Buttons:
-#   https://docs.godotengine.org/en/stable/classes/class_animatedsprite.html
+#   https://opengameart.org/content/keyboard-keys-1
 
 # Animated Sprite Tutorial:
 #   https://docs.godotengine.org/en/stable/tutorials/2d/2d_sprite_animation.html
