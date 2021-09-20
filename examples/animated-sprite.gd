@@ -7,6 +7,10 @@ extends Node2D
 #   https://docs.godotengine.org/en/stable/tutorials/2d/2d_sprite_animation.html
 
 onready var _animatedSprite = $AnimatedSprite
+
+var _rootGitHubPath = "https://raw.githubusercontent.com/graydwarf/"
+var _rootGitHubProjectPath = _rootGitHubPath + "gc-2d-sprite-animations/"
+var _rootGitHubExamplePath = _rootGitHubProjectPath + "main/examples/"
 var _facingDirection = ""
 var _listOfEventKeysForUiLeft : Array
 var _listOfEventKeysForUiRight : Array
@@ -77,3 +81,6 @@ func Stop():
 
 func GetGodotDocUrl():
 	return "tutorials/2d/2d_sprite_animation.html"
+
+func GetSourcePath():
+	return _rootGitHubExamplePath + "animated-sprite.gd"
